@@ -1,8 +1,11 @@
 import {
   BoltIcon,
+  BookOpen,
   BookOpenIcon,
   ChevronDownIcon,
+  Home,
   Layers2Icon,
+  LayoutDashboardIcon,
   LogOutIcon,
   PinIcon,
   UserPenIcon,
@@ -23,6 +26,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Link from "next/link"
 
 export function UserDropdown() {
   return (
@@ -51,17 +55,23 @@ export function UserDropdown() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <BoltIcon size={16} className="opacity-60" aria-hidden="true" />
-            <span>Option 1</span>
+          <DropdownMenuItem asChild>
+            <Link href="/">
+            <Home size={16} className="opacity-60" aria-hidden="true" />
+            </Link>
+            <span>Home</span>
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Layers2Icon size={16} className="opacity-60" aria-hidden="true" />
-            <span>Option 2</span>
+          <DropdownMenuItem asChild>
+            <Link href="/courses">
+            <BookOpen size={16} className="opacity-60" aria-hidden="true" />
+            <span>Courses</span>
+            </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            <BookOpenIcon size={16} className="opacity-60" aria-hidden="true" />
-            <span>Option 3</span>
+          <DropdownMenuItem asChild>
+            <Link href="/dashboard">
+            <LayoutDashboardIcon size={16} className="opacity-60" aria-hidden="true" />
+            <span>Dashboard</span>
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
