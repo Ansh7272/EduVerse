@@ -34,7 +34,7 @@ const navigation=[{
 
                     <div className="flex items-center space-x-4">
                         <ThemeToggle/>
-                        {isPending?null:session?(<p><UserDropdown/> </p> ):(<><Link className={buttonVariants({variant:"secondary"})} href='/login'>Login</Link><Link className={buttonVariants()} href='/login'>Get Started</Link></>)}
+                        {isPending?null:session?(<p><UserDropdown email={session.user.email} image={session.user.image || ""} name={session.user.name} /> </p> ):(<><Link className={buttonVariants({variant:"secondary"})} href='/login'>Login</Link><Link className={buttonVariants()} href='/login'>Get Started</Link></>)}
                     </div>
                 </nav>
             </div>

@@ -37,16 +37,7 @@ const {data: session} = authClient.useSession();
 const router = useRouter()
 
 
-const signout = async()=>{
-  await authClient.signOut({
-  fetchOptions: {
-    onSuccess: () => {
-      router.push("/");
-      toast.success("signout successfully") // redirect to login page
-    },
-  },
-});
-}
+
 
 
   return (
