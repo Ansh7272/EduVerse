@@ -1,15 +1,10 @@
-"use client"
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-// import { Button } from "@/components/ui/button";
-// import { ThemeToggle } from "@/components/ui/themeToggle";
-import { authClient } from "@/lib/auth-client";
+// import { authClient } from "@/lib/auth-client";
 
 // import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { toast } from "sonner";
 interface featuresprop{
     title:string,
     description:string,
@@ -33,8 +28,7 @@ const features:featuresprop[] = [{
     icon:"👥"
 }]
 export default function Home() {
-const {data: session} = authClient.useSession();
-const router = useRouter()
+// const {data: session} = authClient.useSession();
 
 
 
@@ -57,7 +51,7 @@ const router = useRouter()
         </div>
     </section>
 
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-32 gap-6">
         {features.map((feature,index)=>(
             <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
